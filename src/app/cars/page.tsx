@@ -40,7 +40,7 @@ export default async function Home({
   const popular = await fetchPopular();
   const popularMake = popular && popular[1];
   // console.log(page);
-  const cars = data[1];
+  const cars = data?.[1];
 
   return (
     <main className="flex min-h-screen flex-col ">

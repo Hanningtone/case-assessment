@@ -39,8 +39,8 @@ const ListCars = ({ cars, isLoading, popularMake }: carProps) => {
                   .fill(0)
                   .map((_, index) => <CarCardSkeleton key={index} />)
               : cars &&
-                cars.result.length > 0 &&
-                cars.result
+                cars?.result.length > 0 &&
+                cars?.result
                   .filter((car) =>
                     car.title
                       ?.toLocaleLowerCase()
@@ -49,14 +49,14 @@ const ListCars = ({ cars, isLoading, popularMake }: carProps) => {
                   .map((car) => (
                     <Link
                       href={"/cars/" + car.id}
-                      key={car.id}
+                      key={car?.id}
                       className="shadow-lg bg-gray-50 w-full rounded-b-xl"
                     >
                       <div className="relative h-[30vh] md:h-[200px] w-full transitions xl:w-[275px] hover:brightness-50 ">
                         <Image
                           className="object-cover object-center rounded-t-xl "
-                          src={`${car.imageUrl}`}
-                          alt={`/${car.title}`}
+                          src={`${car?.imageUrl}`}
+                          alt={`/${car?.title}`}
                           fill
                           priority
                         />
@@ -67,7 +67,7 @@ const ListCars = ({ cars, isLoading, popularMake }: carProps) => {
                           {car.year}
                         </h2> */}
                           <h1 className="text-gray-500 text-base text-center">
-                            {car.title}
+                            {car?.title}
                           </h1>
                         </div>
                         <div className="flex justify-between my-4 w-full">
@@ -75,7 +75,7 @@ const ListCars = ({ cars, isLoading, popularMake }: carProps) => {
                             Ksh: {String(car.marketplacePrice)}
                           </div>
                           <div>
-                            {car.sold ? (
+                            {car?.sold ? (
                               <span className="bg-red-500 rounded text-sm py-1 font-semibold capitalize text-slate-200  backdrop-blur">
                                 Sold
                               </span>
@@ -100,8 +100,8 @@ const ListCars = ({ cars, isLoading, popularMake }: carProps) => {
         </main>
       </div>
       <CustomPagination
-        resPerPage={cars.pagination.pageSize}
-        productsCount={cars.pagination.total}
+        resPerPage={cars?.pagination.pageSize}
+        productsCount={cars?.pagination.total}
       />
     </>
   );

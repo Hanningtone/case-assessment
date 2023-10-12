@@ -45,7 +45,7 @@ const HeroSection = ({ cars }: carProps) => {
               transition={{ delay: 1.2, duration: 1 }}
               className="text-3xl font-bold capitalize"
             >
-              {data.title}
+              {data?.title}
             </motion.h1>
             <AnimatedText
               text="Welcome to Robbie Motors - Your Trusted Source for Quality Pre-Owned Cars!"
@@ -59,7 +59,7 @@ const HeroSection = ({ cars }: carProps) => {
               className="flex items-center"
             >
               <Link
-                href={`/cars/${data.id}`}
+                href={`/cars/${data?.id}`}
                 className="bg-red-500 hover:bg-red-700 transitions active:scale-105  px-6 py-2 rounded !text-white inline-flex"
               >
                 Read More

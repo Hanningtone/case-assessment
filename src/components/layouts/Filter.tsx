@@ -51,8 +51,8 @@ const Filters = ({ popularMake }: { popularMake: PopularEntity }) => {
         <h3 className="font-semibold mb-2 text-red-500">Popular Brand</h3>
 
         <ul className="space-y-1 grid grid-cols-4 md:grid-cols-3 gap-4">
-          {popularMake.makeList.length > 0 &&
-            popularMake.makeList.map((brand) => (
+          {popularMake?.makeList.length > 0 &&
+            popularMake?.makeList.map((brand) => (
               <div key={brand.id} className="flex items-center gap-2">
                 <span>
                   <input name="brand" type="checkbox" className="h-4 w-4" />
